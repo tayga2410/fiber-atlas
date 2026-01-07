@@ -5,7 +5,7 @@ export const routing = defineRouting({
   // Список поддерживаемых locales
   locales: ['ru', 'kk'],
   // Default locale при отсутствии в URL
-  defaultLocale: 'ru',
+  defaultLocale: 'kk',
 });
 
 // Re-export the navigation helpers
