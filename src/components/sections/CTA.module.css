@@ -1,0 +1,146 @@
+.ctaSection {
+    background: linear-gradient(to bottom, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ctaSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+    opacity: 0.5;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--color-secondary);
+    margin-bottom: 3rem;
+}
+
+.contactCard {
+    background-color: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    margin-bottom: 3rem;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.contactCard::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(56, 189, 248, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.phoneWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.phoneIcon {
+    color: var(--color-accent);
+}
+
+.phoneNumber {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: color 0.2s;
+}
+
+.phoneNumber:hover {
+    color: var(--color-accent);
+    text-shadow: 0 0 15px var(--color-accent-glow);
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+}
+
+.whatsappBtn {
+    background-color: #25D366;
+    border: none;
+    color: #ffffff;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.whatsappBtn:hover {
+    background-color: #22c35e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.telegramBtn {
+    background-color: #0088cc;
+    border: none;
+    color: #ffffff;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.telegramBtn:hover {
+    background-color: #0077b5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.feature {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-primary-light);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkIcon {
+    color: var(--color-accent);
+}

@@ -1,0 +1,121 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.scrolled {
+    background-color: rgba(11, 17, 33, 0.85);
+    /* Dark blue with opacity */
+    backdrop-filter: blur(12px);
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    letter-spacing: -0.02em;
+}
+
+.logoImage {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    /* Blend mode to make black background transparent */
+    mix-blend-mode: screen;
+    border-radius: 50%;
+}
+
+.nav {
+    display: none;
+}
+
+.navLink {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-secondary);
+    transition: color 0.2s;
+}
+
+.navLink:hover {
+    color: var(--color-accent);
+}
+
+.actions {
+    display: none;
+    align-items: center;
+    gap: 1rem;
+}
+
+.phone {
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: 0.95rem;
+}
+
+.mobileMenuBtn {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Mobile Menu */
+.mobileMenu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.mobileNavLink {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    display: block;
+    padding: 0.5rem 0;
+}
+
+@media (min-width: 768px) {
+    .mobileMenuBtn {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .actions {
+        display: flex;
+    }
+}
