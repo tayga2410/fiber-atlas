@@ -11,6 +11,7 @@ import {
     Database,
     Layout
 } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
 export const Features = () => {
@@ -51,22 +52,35 @@ export const Features = () => {
 
     return (
         <Section id="features" className={styles.featuresSection}>
-            <div className={styles.header}>
+            <motion.div
+                className={styles.header}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+            >
                 <h2 className={styles.title}>{t('title')}</h2>
                 <p className={styles.subtitle}>
                     {t('subtitle')}
                 </p>
-            </div>
+            </motion.div>
 
             <div className={styles.grid}>
                 {features.map((feature, index) => (
-                    <div key={index} className={styles.card}>
+                    <motion.div
+                        key={index}
+                        className={styles.card}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
                         <div className={styles.iconWrapper}>
                             {feature.icon}
                         </div>
                         <h3 className={styles.cardTitle}>{t(`items.${feature.key}.title`)}</h3>
                         <p className={styles.cardDescription}>{t(`items.${feature.descriptionKey}.description`)}</p>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </Section>

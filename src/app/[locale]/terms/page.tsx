@@ -20,13 +20,16 @@ export default async function TermsPage({ params }: LocaleParams) {
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'Terms' });
 
-  const sections = t.raw('sections');
+  const content = t.raw('content');
+  const sections = Object.entries(content)
+      .filter(([key]) => key.startsWith('section'))
+      .map(([key, value]: [string, any]) => value);
 
   return (
     <Section className={styles.pageSection}>
       <div className={styles.backWrapper}>
         <Link
-          href="/"
+          href={`/${locale}`}
           className={styles.backLink}
         >
           ← {t('backToHome')}
@@ -37,9 +40,6 @@ export default async function TermsPage({ params }: LocaleParams) {
         <h1 className={styles.title}>
           {t('title')}
         </h1>
-        <p className={styles.date}>
-          {t('lastUpdated')}: 7 {t('january')} 2026 {t('year')}
-        </p>
       </header>
 
       <div className={styles.content}>
@@ -51,12 +51,12 @@ export default async function TermsPage({ params }: LocaleParams) {
 
         {sections.map((section: any, index: number) => (
           <section key={index} className={styles.section}>
-            <h2 className={styles.heading}>{index + 1}. {section.title}</h2>
+            <h2 className={styles.heading}>{section.title}</h2>
             <p className={styles.paragraph}>
-              {section.content.split('\n').map((line: string, i: number) => (
+              {section.text.split('\n').map((line: string, i: number) => (
                 <React.Fragment key={i}>
                   {line}
-                  {i < section.content.split('\n').length - 1 && <br />}
+                  {i < section.text.split('\n').length - 1 && <br />}
                 </React.Fragment>
               ))}
             </p>
@@ -66,7 +66,7 @@ export default async function TermsPage({ params }: LocaleParams) {
 
       <footer className={styles.footer}>
         <Link
-          href="/"
+          href={`/${locale}`}
           className={styles.footerLink}
         >
           ← {t('backToHome')}
