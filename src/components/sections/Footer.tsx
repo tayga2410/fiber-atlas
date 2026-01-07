@@ -3,9 +3,14 @@
 import React from 'react';
 import styles from './Footer.module.css';
 import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 
 export const Footer = () => {
     const t = useTranslations('Footer');
+    const pathname = usePathname();
+
+    // Get current locale from pathname
+    const locale = pathname.startsWith('/kk') ? 'kk' : 'ru';
 
     return (
         <footer className={styles.footer}>
@@ -36,7 +41,7 @@ export const Footer = () => {
                         <ul className={styles.links}>
                             <li><a href="https://wa.me/77007774445" target="_blank" rel="noopener noreferrer">{t('Header.phone')}</a></li>
                             <li><a href="https://wa.me/77007774445" target="_blank" rel="noopener noreferrer">{t('whatsapp')}</a></li>
-                            <li><a href="https://t.me/fiberatlas" target="_blank" rel="noopener noreferrer">{t('telegram')}</a></li>
+                            <li><a href="https://t.me/tayga_dev" target="_blank" rel="noopener noreferrer">{t('telegram')}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -46,8 +51,8 @@ export const Footer = () => {
                         © 2024-2026 Fiber Atlas. {t('copyright')}
                     </div>
                     <div className={styles.legal}>
-                        <a href="/privacy">{t('privacy')}</a>
-                        <a href="/terms">{t('terms')}</a>
+                        <a href={`/${locale}/privacy`}>{t('privacy')}</a>
+                        <a href={`/${locale}/terms`}>{t('terms')}</a>
                     </div>
                 </div>
             </div>

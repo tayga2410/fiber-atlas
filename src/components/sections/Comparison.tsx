@@ -4,6 +4,7 @@ import React from 'react';
 import styles from './Comparison.module.css';
 import { Section } from '../ui/Section';
 import { Check, X } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
 export const Comparison = () => {
@@ -44,14 +45,26 @@ export const Comparison = () => {
 
     return (
         <Section id="comparison" className={styles.comparisonSection}>
-            <div className={styles.header}>
+            <motion.div
+                className={styles.header}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+            >
                 <h2 className={styles.title}>{t('title')}</h2>
                 <p className={styles.subtitle}>
                     {t('subtitle')}
                 </p>
-            </div>
+            </motion.div>
 
-            <div className={styles.tableWrapper}>
+            <motion.div
+                className={styles.tableWrapper}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+            >
                 <table className={styles.table}>
                     <thead>
                         <tr>
@@ -80,11 +93,18 @@ export const Comparison = () => {
                         ))}
                     </tbody>
                 </table>
-            </div>
+            </motion.div>
 
             <div className={styles.mobileCards}>
                 {rows.map((row, index) => (
-                    <div key={index} className={styles.mobileCard}>
+                    <motion.div
+                        key={index}
+                        className={styles.mobileCard}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: index * 0.1 }}
+                    >
                         <h4 className={styles.mobileCardTitle}>{row.feature}</h4>
                         <div className={styles.mobileComparison}>
                             <div className={styles.mobileAtlas}>
@@ -96,7 +116,7 @@ export const Comparison = () => {
                                 <span>{row.manual}</span>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </Section>

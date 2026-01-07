@@ -4,6 +4,7 @@ import React from 'react';
 import styles from './Benefits.module.css';
 import { Section } from '../ui/Section';
 import { Clock, TrendingUp, Coins, Rocket, Lock, Globe } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
 export const Benefits = () => {
@@ -50,23 +51,36 @@ export const Benefits = () => {
 
     return (
         <Section id="benefits">
-            <div className={styles.header}>
+            <motion.div
+                className={styles.header}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+            >
                 <h2 className={styles.title}>{t('title')}</h2>
                 <p className={styles.subtitle}>
                     {t('subtitle')}
                 </p>
-            </div>
+            </motion.div>
 
             <div className={styles.grid}>
                 {benefits.map((item, index) => (
-                    <div key={index} className={styles.card}>
+                    <motion.div
+                        key={index}
+                        className={styles.card}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ duration: 0.4, delay: index * 0.08 }}
+                    >
                         <div className={styles.iconWrapper}>
                             {item.icon}
                         </div>
                         <div className={styles.value}>{item.value}</div>
                         <div className={styles.label}>{item.label}</div>
                         <p className={styles.desc}>{item.desc}</p>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </Section>

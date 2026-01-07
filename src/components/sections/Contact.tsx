@@ -5,6 +5,7 @@ import styles from './Contact.module.css';
 import { Section } from '../ui/Section';
 import { Button } from '../ui/Button';
 import { Phone, MessageCircle, Send, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
 export const Contact = () => {
@@ -26,40 +27,70 @@ export const Contact = () => {
     return (
         <Section id="contact">
             <div className={styles.container}>
-                <div className={styles.infoColumn}>
+                <motion.div
+                    className={styles.infoColumn}
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
                     <h2 className={styles.title}>{t('title')}</h2>
                     <p className={styles.subtitle}>
                         {t('subtitle')}
                     </p>
 
                     <div className={styles.contacts}>
-                        <div className={styles.contactItem}>
+                        <motion.div
+                            className={styles.contactItem}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.4, delay: 0.2 }}
+                        >
                             <Phone className={styles.icon} size={24} />
                             <div>
                                 <div className={styles.contactLabel}>{t('info.phone')}</div>
                                 <a href="https://wa.me/77007774445" target="_blank" rel="noopener noreferrer" className={styles.contactValue}>{t('Header.phone')}</a>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        <div className={styles.contactItem}>
+                        <motion.div
+                            className={styles.contactItem}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.4, delay: 0.3 }}
+                        >
                             <MessageCircle className={styles.icon} size={24} />
                             <div>
                                 <div className={styles.contactLabel}>{t('info.whatsapp')}</div>
                                 <a href="https://wa.me/77007774445" target="_blank" rel="noopener noreferrer" className={styles.contactValue}>{t('info.writeWhatsapp')}</a>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        <div className={styles.contactItem}>
+                        <motion.div
+                            className={styles.contactItem}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.4, delay: 0.4 }}
+                        >
                             <Send className={styles.icon} size={24} />
                             <div>
                                 <div className={styles.contactLabel}>{t('info.telegram')}</div>
-                                <a href="https://t.me/fiberatlas" target="_blank" rel="noopener noreferrer" className={styles.contactValue}>{t('info.writeTelegram')}</a>
+                                <a href="https://t.me/tayga_dev" target="_blank" rel="noopener noreferrer" className={styles.contactValue}>{t('info.writeTelegram')}</a>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
-                </div>
+                </motion.div>
 
-                <div className={styles.formColumn}>
+                <motion.div
+                    className={styles.formColumn}
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
                     <form className={styles.form} onSubmit={handleSubmit}>
                         <h3 className={styles.formTitle}>{t('formTitle')}</h3>
 
@@ -91,7 +122,7 @@ export const Contact = () => {
                             {t('form.disclaimer')}
                         </p>
                     </form>
-                </div>
+                </motion.div>
             </div>
         </Section>
     );

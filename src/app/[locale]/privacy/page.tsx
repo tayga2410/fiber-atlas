@@ -12,13 +12,16 @@ export default async function PrivacyPage({ params }: LocaleParams) {
         namespace: 'Privacy'
     });
 
-    const sections = t.raw('sections');
+    const content = t.raw('content');
+    const sections = Object.entries(content)
+        .filter(([key]) => key.startsWith('section'))
+        .map(([key, value]: [string, any]) => value);
 
     return (
         <Section className={styles.pageSection}>
             <div className={styles.backWrapper}>
                 <Link
-                    href="/"
+                    href={`/${locale}`}
                     className={styles.backLink}
                 >
                     ← {t('back')}
@@ -43,12 +46,12 @@ export default async function PrivacyPage({ params }: LocaleParams) {
 
                 {sections.map((section: any, index: number) => (
                     <section key={index} className={styles.section}>
-                        <h2 className={styles.heading}>{index + 1}. {section.title}</h2>
+                        <h2 className={styles.heading}>{section.title}</h2>
                         <p className={styles.paragraph}>
-                            {section.content.split('\n').map((line: string, i: number) => (
+                            {section.text.split('\n').map((line: string, i: number) => (
                                 <React.Fragment key={i}>
                                     {line}
-                                    {i < section.content.split('\n').length - 1 && <br />}
+                                    {i < section.text.split('\n').length - 1 && <br />}
                                 </React.Fragment>
                             ))}
                         </p>
@@ -58,7 +61,7 @@ export default async function PrivacyPage({ params }: LocaleParams) {
 
             <footer className={styles.footer}>
                 <Link
-                    href="/"
+                    href={`/${locale}`}
                     className={styles.footerLink}
                 >
                     ← {t('home')}
