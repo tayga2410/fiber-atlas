@@ -49,7 +49,7 @@
 }
 
 .title {
-    font-size: 3rem;
+    font-size: 2rem;
     line-height: 1.1;
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
@@ -121,7 +121,7 @@
 
 @media (min-width: 768px) {
     .title {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     .features {
@@ -132,6 +132,6 @@
 
 @media (min-width: 1024px) {
     .title {
-        font-size: 5rem;
+        font-size: 3.5rem;
     }
 }

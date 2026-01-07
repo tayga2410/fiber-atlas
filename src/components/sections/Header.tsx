@@ -73,6 +73,9 @@ export const Header = () => {
                             {link.name}
                         </a>
                     ))}
+                    <div className={styles.mobileLanguageSwitcher}>
+                        <LanguageSwitcher />
+                    </div>
                 </div>
             )}
         </header>

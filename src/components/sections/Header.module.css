@@ -104,6 +104,12 @@
     padding: 0.5rem 0;
 }
 
+.mobileLanguageSwitcher {
+    padding-top: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
 @media (min-width: 768px) {
     .mobileMenuBtn {
         display: none;
