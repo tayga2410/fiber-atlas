@@ -4,58 +4,60 @@ import React, { useState } from 'react';
 import styles from './UseCases.module.css';
 import { Section } from '../ui/Section';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Building2, Globe, Users, CheckCircle2 } from 'lucide-react';
+import { Globe, Users, CheckCircle2 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export const UseCases = () => {
     const [activeTab, setActiveTab] = useState(0);
+    const t = useTranslations('UseCases');
 
     const cases = [
         {
             id: 0,
-            tabTitle: 'Локальный провайдер',
+            tabTitle: t('cases.isp.tabTitle'),
             icon: <Globe size={20} />,
-            title: 'Единая база данных сети',
-            problem: 'Сеть на 2000 абонентов. Данные разбросаны по разным файлам, сложно быстро найти свободные волокна.',
+            title: t('cases.isp.title'),
+            problem: t('cases.isp.problem'),
             solution: [
-                'Централизованный учет всех кабельных линий',
-                'Оцифровка схем разварки всех муфт',
-                'Создание интерактивной топологии сети'
+                t('cases.isp.solution.0'),
+                t('cases.isp.solution.1'),
+                t('cases.isp.solution.2')
             ],
             result: [
-                'Вся информация о сети доступна в один клик',
-                'Инвентаризация ресурсов стала прозрачной'
+                t('cases.isp.result.0'),
+                t('cases.isp.result.1')
             ]
         },
         {
             id: 1,
-            tabTitle: 'Городская сеть',
+            tabTitle: t('cases.city.tabTitle'),
             icon: <Users size={20} />,
-            title: 'Координация выездных бригад',
-            problem: 'Сложная городская застройка, 50+ узлов агрегации. Монтажники тратят время на уточнение схем.',
+            title: t('cases.city.title'),
+            problem: t('cases.city.problem'),
             solution: [
-                'Доступ к актуальным данным с мобильных устройств',
-                'Визуализация маршрутов и узлов на карте',
-                'Разграничение прав доступа для сотрудников'
+                t('cases.city.solution.0'),
+                t('cases.city.solution.1'),
+                t('cases.city.solution.2')
             ],
             result: [
-                'Количество ошибок при работах снизилось на 80%',
-                'Оперативное управление изменениями в сети'
+                t('cases.city.result.0'),
+                t('cases.city.result.1')
             ]
         },
         {
             id: 2,
-            tabTitle: 'Магистральный оператор',
+            tabTitle: t('cases.operator.tabTitle'),
             icon: <Globe size={20} />,
-            title: 'Управление емкостью и ресурсами',
-            problem: 'Межгородские трассы, муфты на 288+ волокон. Сложно отслеживать арендованные ресурсы.',
+            title: t('cases.operator.title'),
+            problem: t('cases.operator.problem'),
             solution: [
-                'Детальный учет каждого волокна на всем протяжении',
-                'Автоматическая проверка связности маршрутов',
-                'Учет арендованной оптики и темных волокон'
+                t('cases.operator.solution.0'),
+                t('cases.operator.solution.1'),
+                t('cases.operator.solution.2')
             ],
             result: [
-                'Мгновенная оценка доступных мощностей',
-                'Оптимизация использования кабельной инфраструктуры'
+                t('cases.operator.result.0'),
+                t('cases.operator.result.1')
             ]
         }
     ];
@@ -63,9 +65,9 @@ export const UseCases = () => {
     return (
         <Section id="cases" className={styles.useCasesSection}>
             <div className={styles.header}>
-                <h2 className={styles.title}>Кому подходит Fiber Atlas</h2>
+                <h2 className={styles.title}>{t('title')}</h2>
                 <p className={styles.subtitle}>
-                    Решения для компаний любого масштаба — от локальных провайдеров до магистральных операторов.
+                    {t('subtitle')}
                 </p>
             </div>
 
@@ -98,9 +100,9 @@ export const UseCases = () => {
 
                         <div className={styles.caseGrid}>
                             <div className={styles.problemSide}>
-                                <div className={styles.blockTitle}>Ситуация до</div>
+                                <div className={styles.blockTitle}>{t('before')}</div>
                                 <p className={styles.problemText}>{cases[activeTab].problem}</p>
-                                <div className={styles.blockTitle}>Решение</div>
+                                <div className={styles.blockTitle}>{t('solution')}</div>
                                 <ul className={styles.list}>
                                     {cases[activeTab].solution.map((item, i) => (
                                         <li key={i}>
@@ -112,7 +114,7 @@ export const UseCases = () => {
                             </div>
 
                             <div className={styles.resultBlock}>
-                                <div className={styles.blockTitle}>Результат</div>
+                                <div className={styles.blockTitle}>{t('result')}</div>
                                 <ul className={styles.resultList}>
                                     {cases[activeTab].result.map((item, i) => (
                                         <li key={i} className={styles.resultItem}>

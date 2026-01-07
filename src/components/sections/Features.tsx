@@ -11,47 +11,50 @@ import {
     Database,
     Layout
 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export const Features = () => {
+    const t = useTranslations('Features');
+    
     const features = [
         {
             icon: <MapIcon size={32} />,
-            title: "Интерактивная карта",
-            description: "Визуальное управление всей сетью на картах Yandex, Google или OpenStreetMap."
+            key: 'map',
+            descriptionKey: 'map'
         },
         {
             icon: <Layers size={32} />,
-            title: "Редактор схем",
-            description: "Встроенный инструмент для создания детальных схем коммутации муфт и кроссов."
+            key: 'schemes',
+            descriptionKey: 'schemes'
         },
         {
             icon: <Zap size={32} />,
-            title: "Быстрая работа",
-            description: "Мгновенный поиск объектов, фильтрация по типам и статусам в реальном времени."
+            key: 'search',
+            descriptionKey: 'search'
         },
         {
             icon: <Database size={32} />,
-            title: "Единая база",
-            description: "Централизованное хранение данных о кабелях, оборудовании и абонентах."
+            key: 'docs',
+            descriptionKey: 'docs'
         },
         {
             icon: <Layout size={32} />,
-            title: "Удобный интерфейс",
-            description: "Современный дизайн, адаптированный под задачи инженеров и диспетчеров."
+            key: 'reports',
+            descriptionKey: 'reports'
         },
         {
             icon: <ShieldCheck size={32} />,
-            title: "Приватность и защита",
-            description: "Отдельный VPS-сервер для каждого клиента. Ваши данные изолированы и надежно защищены."
+            key: 'anyDistance',
+            descriptionKey: 'anyDistance'
         }
     ];
 
     return (
         <Section id="features" className={styles.featuresSection}>
             <div className={styles.header}>
-                <h2 className={styles.title}>Возможности системы</h2>
+                <h2 className={styles.title}>{t('title')}</h2>
                 <p className={styles.subtitle}>
-                    Все необходимые инструменты для эффективного управления телеком-инфраструктурой в одном окне.
+                    {t('subtitle')}
                 </p>
             </div>
 
@@ -61,8 +64,8 @@ export const Features = () => {
                         <div className={styles.iconWrapper}>
                             {feature.icon}
                         </div>
-                        <h3 className={styles.cardTitle}>{feature.title}</h3>
-                        <p className={styles.cardDescription}>{feature.description}</p>
+                        <h3 className={styles.cardTitle}>{t(`items.${feature.key}.title`)}</h3>
+                        <p className={styles.cardDescription}>{t(`items.${feature.descriptionKey}.description`)}</p>
                     </div>
                 ))}
             </div>

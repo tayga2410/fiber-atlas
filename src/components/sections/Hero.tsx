@@ -6,8 +6,11 @@ import { Button } from '../ui/Button';
 import { Section } from '../ui/Section';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 export const Hero = () => {
+    const t = useTranslations('Hero');
+
     return (
         <section className={styles.heroSection}>
             <div className={styles.backgroundOverlay}></div>
@@ -19,33 +22,30 @@ export const Hero = () => {
                     className={styles.textContent}
                 >
                     <div className={styles.badge}>
-                        Система учета ВОЛС №1
+                        {t('badge')}
                     </div>
                     <h1 className={styles.title}>
-                        Полный контроль над <br />
-                        <span className={styles.highlight}>инфраструктурой сети</span>
+                        {t('title')}
                     </h1>
 
                     <p className={styles.subtitle}>
-                        Профессиональная GIS-система для операторов связи.
-                        Паспортизация, мониторинг и управление сетью в одном окне.
+                        {t('subtitle')}
                     </p>
 
                     <div className={styles.features}>
                         <div className={styles.featureItem}>
                             <CheckCircle2 size={20} className={styles.checkIcon} />
-                            <span>Точная паспортизация</span>
+                            <span>{t('features.passportization')}</span>
                         </div>
                         <div className={styles.featureItem}>
                             <CheckCircle2 size={20} className={styles.checkIcon} />
-                            <span>Интерактивные схемы</span>
+                            <span>{t('features.schemes')}</span>
                         </div>
-
                     </div>
 
                     <div className={styles.ctaGroup}>
                         <Button size="lg" onClick={() => window.location.href = '#contact'} className={styles.primaryBtn}>
-                            Начать внедрение <ArrowRight size={18} style={{ marginLeft: '8px' }} />
+                            {t('cta')} <ArrowRight size={18} style={{ marginLeft: '8px' }} />
                         </Button>
 
                     </div>

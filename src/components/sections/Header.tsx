@@ -5,10 +5,13 @@ import styles from './Header.module.css';
 import { Button } from '../ui/Button';
 import { Menu, X, Map } from 'lucide-react';
 import { clsx } from 'clsx';
+import LanguageSwitcher from '../ui/LanguageSwitcher';
+import { useTranslations } from 'next-intl';
 
 export const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const t = useTranslations('Header');
 
     useEffect(() => {
         const handleScroll = () => {
@@ -19,10 +22,10 @@ export const Header = () => {
     }, []);
 
     const navLinks = [
-        { name: 'Возможности', href: '#features' },
-        { name: 'Кейсы', href: '#cases' },
-        { name: 'Сравнение', href: '#comparison' },
-        { name: 'Контакты', href: '#contact' },
+        { name: t('nav.features'), href: '#features' },
+        { name: t('nav.cases'), href: '#cases' },
+        { name: t('nav.comparison'), href: '#comparison' },
+        { name: t('nav.contacts'), href: '#contact' },
     ];
 
     return (
@@ -42,9 +45,10 @@ export const Header = () => {
                 </nav>
 
                 <div className={styles.actions}>
-                    <span className={styles.phone}>8 700 777 44 45</span>
+                    <LanguageSwitcher />
+                    <span className={styles.phone}>{t('phone')}</span>
                     <Button size="sm" onClick={() => window.location.href = '#contact'}>
-                        Связаться
+                        {t('cta')}
                     </Button>
                 </div>
 

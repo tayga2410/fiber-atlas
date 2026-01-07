@@ -5,26 +5,17 @@ import styles from './ProblemSolution.module.css';
 import { Section } from '../ui/Section';
 import { XCircle, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 export const ProblemSolution = () => {
-    const problems = [
-        "Кабели и муфты в Excel-таблицах",
-        "Схемы подключений в AutoCAD или на бумаге",
-        "Разрозненные базы для оборудования и клиентов"
-    ];
-
-    const solutions = [
-        "Интерактивная карта — вся сеть как на ладони",
-        "Встроенный редактор схем прямо в браузере",
-        "Единая база: кабели, оборудование, клиенты"
-    ];
+    const t = useTranslations('ProblemSolution');
 
     return (
         <Section id="problem-solution" alt>
             <div className={styles.header}>
-                <h2 className={styles.title}>Знакомые проблемы?</h2>
+                <h2 className={styles.title}>{t('title')}</h2>
                 <p className={styles.subtitle}>
-                    Устаревшие методы учета тормозят развитие сети и увеличивают время реакции на аварии.
+                    {t('subtitle')}
                 </p>
             </div>
 
@@ -37,15 +28,21 @@ export const ProblemSolution = () => {
                     className={styles.card}
                 >
                     <div className={styles.cardHeader}>
-                        <h3 className={styles.cardTitle}>Как это обычно бывает</h3>
+                        <h3 className={styles.cardTitle}>{t('problemTitle')}</h3>
                     </div>
                     <ul className={styles.list}>
-                        {problems.map((item, index) => (
-                            <li key={index} className={styles.listItem}>
-                                <XCircle className={styles.iconProblem} size={20} />
-                                <span>{item}</span>
-                            </li>
-                        ))}
+                        <li className={styles.listItem}>
+                            <XCircle className={styles.iconProblem} size={20} />
+                            <span>{t('problems.0')}</span>
+                        </li>
+                        <li className={styles.listItem}>
+                            <XCircle className={styles.iconProblem} size={20} />
+                            <span>{t('problems.1')}</span>
+                        </li>
+                        <li className={styles.listItem}>
+                            <XCircle className={styles.iconProblem} size={20} />
+                            <span>{t('problems.2')}</span>
+                        </li>
                     </ul>
                 </motion.div>
 
@@ -58,7 +55,7 @@ export const ProblemSolution = () => {
                 >
                     <div className={styles.cardHeader}>
                         <h3 className={`${styles.cardTitle} ${styles.textPrimary}`}>
-                            Решение Fiber Atlas
+                            {t('solutionTitle')}
                         </h3>
                     </div>
 
@@ -71,12 +68,18 @@ export const ProblemSolution = () => {
                     </div>
 
                     <ul className={styles.list}>
-                        {solutions.map((item, index) => (
-                            <li key={index} className={styles.listItem}>
-                                <CheckCircle className={styles.iconSolution} size={20} />
-                                <span>{item}</span>
-                            </li>
-                        ))}
+                        <li className={styles.listItem}>
+                            <CheckCircle className={styles.iconSolution} size={20} />
+                            <span>{t('solutions.0')}</span>
+                        </li>
+                        <li className={styles.listItem}>
+                            <CheckCircle className={styles.iconSolution} size={20} />
+                            <span>{t('solutions.1')}</span>
+                        </li>
+                        <li className={styles.listItem}>
+                            <CheckCircle className={styles.iconSolution} size={20} />
+                            <span>{t('solutions.2')}</span>
+                        </li>
                     </ul>
                 </motion.div>
             </div>

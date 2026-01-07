@@ -4,53 +4,56 @@ import React from 'react';
 import styles from './Benefits.module.css';
 import { Section } from '../ui/Section';
 import { Clock, TrendingUp, Coins, Rocket, Lock, Globe } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export const Benefits = () => {
+    const t = useTranslations('Benefits');
+
     const benefits = [
         {
             icon: <Clock size={32} />,
-            value: "До 80%",
-            label: "экономия времени на поиск",
-            desc: "Мгновенный доступ к информации о любом элементе сети."
+            value: t('items.time.value'),
+            label: t('items.time.label'),
+            desc: t('items.time.desc')
         },
         {
             icon: <Coins size={32} />,
-            value: "До 50%",
-            label: "снижение затрат",
-            desc: "Оптимизация расходов на документирование и инвентаризацию."
+            value: t('items.cost.value'),
+            label: t('items.cost.label'),
+            desc: t('items.cost.desc')
         },
         {
             icon: <TrendingUp size={32} />,
-            value: "До 3x",
-            label: "скорость онбординга",
-            desc: "Новые сотрудники быстрее вникают в структуру сети."
+            value: t('items.onboarding.value'),
+            label: t('items.onboarding.label'),
+            desc: t('items.onboarding.desc')
         },
         {
             icon: <Rocket size={32} />,
-            value: "3 дня",
-            label: "до начала работы",
-            desc: "Быстрый старт благодаря готовым Docker-контейнерам."
+            value: t('items.start.value'),
+            label: t('items.start.label'),
+            desc: t('items.start.desc')
         },
         {
             icon: <Lock size={32} />,
-            value: "100%",
-            label: "контроль действий",
-            desc: "Полный журнал изменений и действий пользователей."
+            value: t('items.control.value'),
+            label: t('items.control.label'),
+            desc: t('items.control.desc')
         },
         {
             icon: <Globe size={32} />,
-            value: "1000+",
-            label: "объектов на карте",
-            desc: "Стабильная работа даже с очень крупными сетями."
+            value: t('items.objects.value'),
+            label: t('items.objects.label'),
+            desc: t('items.objects.desc')
         }
     ];
 
     return (
         <Section id="benefits">
             <div className={styles.header}>
-                <h2 className={styles.title}>Измеримые результаты для бизнеса</h2>
+                <h2 className={styles.title}>{t('title')}</h2>
                 <p className={styles.subtitle}>
-                    Цифры говорят сами за себя. Эффективность, подтвержденная практикой.
+                    {t('subtitle')}
                 </p>
             </div>
 
