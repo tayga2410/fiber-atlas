@@ -55,7 +55,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  gap: 8rem;
 }
 
 .sectionIntro {
@@ -83,13 +83,22 @@
 .paragraph {
   font-size: 1.25rem;
   color: #9ca3af;
-  line-height: 2;
+  line-height: 2.4;
+  margin-bottom: 2.5rem;
+}
+
+.paragraph + .paragraph {
+  margin-top: 1.5rem;
+}
+
+.paragraph:last-child {
+  margin-bottom: 0;
 }
 
 .paragraphList {
   font-size: 1.25rem;
   color: #9ca3af;
-  line-height: 2;
+  line-height: 2.2;
   margin-bottom: 2.5rem;
 }
 

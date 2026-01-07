@@ -2,8 +2,11 @@
 
 import React from 'react';
 import styles from './Footer.module.css';
+import { useTranslations } from 'next-intl';
 
 export const Footer = () => {
+    const t = useTranslations('Footer');
+
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
@@ -14,37 +17,37 @@ export const Footer = () => {
                             <span className={styles.logoText}>Fiber Atlas</span>
                         </div>
                         <p className={styles.description}>
-                            Профессиональная система управления телекоммуникационной инфраструктурой.
+                            {t('description')}
                         </p>
                     </div>
 
                     <div className={styles.linksColumn}>
-                        <h4 className={styles.columnTitle}>Продукт</h4>
+                        <h4 className={styles.columnTitle}>{t('product')}</h4>
                         <ul className={styles.links}>
-                            <li><a href="#features">Возможности</a></li>
-                            <li><a href="#cases">Кейсы</a></li>
-                            <li><a href="#comparison">Сравнение</a></li>
+                            <li><a href="#features">{t('Header.nav.features')}</a></li>
+                            <li><a href="#cases">{t('Header.nav.cases')}</a></li>
+                            <li><a href="#comparison">{t('Header.nav.comparison')}</a></li>
                             <li><a href="#faq">FAQ</a></li>
                         </ul>
                     </div>
 
                     <div className={styles.linksColumn}>
-                        <h4 className={styles.columnTitle}>Контакты</h4>
+                        <h4 className={styles.columnTitle}>{t('contacts')}</h4>
                         <ul className={styles.links}>
-                            <li><a href="https://wa.me/77007774445" target="_blank" rel="noopener noreferrer">8 700 777 44 45</a></li>
-                            <li><a href="https://wa.me/77007774445" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-                            <li><a href="https://t.me/fiberatlas" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+                            <li><a href="https://wa.me/77007774445" target="_blank" rel="noopener noreferrer">{t('Header.phone')}</a></li>
+                            <li><a href="https://wa.me/77007774445" target="_blank" rel="noopener noreferrer">{t('whatsapp')}</a></li>
+                            <li><a href="https://t.me/fiberatlas" target="_blank" rel="noopener noreferrer">{t('telegram')}</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div className={styles.bottom}>
                     <div className={styles.copyright}>
-                        © 2024-2026 Fiber Atlas. Все права защищены.
+                        © 2024-2026 Fiber Atlas. {t('copyright')}
                     </div>
                     <div className={styles.legal}>
-                        <a href="/privacy">Политика конфиденциальности</a>
-                        <a href="/terms">Условия использования</a>
+                        <a href="/privacy">{t('privacy')}</a>
+                        <a href="/terms">{t('terms')}</a>
                     </div>
                 </div>
             </div>

@@ -4,37 +4,40 @@ import React from 'react';
 import styles from './Comparison.module.css';
 import { Section } from '../ui/Section';
 import { Check, X } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export const Comparison = () => {
+    const t = useTranslations('Comparison');
+
     const rows = [
         {
-            feature: "Точность позиционирования",
-            atlas: "Сантиметровая точность, привязка к реальным опорам и колодцам",
-            manual: "Приблизительные метки на Google/Yandex картах, погрешность до 15 метров",
+            feature: t('rows.positioning.feature'),
+            atlas: t('rows.positioning.atlas'),
+            manual: t('rows.positioning.manual'),
             status: "atlas"
         },
         {
-            feature: "Схемы коммутации",
-            atlas: "Детальные схемы разварки муфт и кроссов в едином интерфейсе",
-            manual: "Разрозненные Excel-файлы или бумажные журналы, которые сложно обновлять",
+            feature: t('rows.schemes.feature'),
+            atlas: t('rows.schemes.atlas'),
+            manual: t('rows.schemes.manual'),
             status: "atlas"
         },
         {
-            feature: "Учет специфики ВОЛС",
-            atlas: "Учет типов кабелей, волоконности, затуханий и запасов кабеля",
-            manual: "Общие инструменты рисования, не учитывающие специфику оптики",
+            feature: t('rows.fiber.feature'),
+            atlas: t('rows.fiber.atlas'),
+            manual: t('rows.fiber.manual'),
             status: "atlas"
         },
         {
-            feature: "Поиск и доступ",
-            atlas: "Мгновенный поиск любой муфты или абонента по всей сети",
-            manual: "Перебор десятков вкладок Excel или поиск нужной папки на диске",
+            feature: t('rows.search.feature'),
+            atlas: t('rows.search.atlas'),
+            manual: t('rows.search.manual'),
             status: "atlas"
         },
         {
-            feature: "Надежность данных",
-            atlas: "Полная история изменений и облачное хранение с бэкапами",
-            manual: "Риск случайного удаления или повреждения файлов без возможности отката",
+            feature: t('rows.reliability.feature'),
+            atlas: t('rows.reliability.atlas'),
+            manual: t('rows.reliability.manual'),
             status: "atlas"
         }
     ];
@@ -42,9 +45,9 @@ export const Comparison = () => {
     return (
         <Section id="comparison" className={styles.comparisonSection}>
             <div className={styles.header}>
-                <h2 className={styles.title}>Fiber Atlas vs Старые методы</h2>
+                <h2 className={styles.title}>{t('title')}</h2>
                 <p className={styles.subtitle}>
-                    Сравните эффективность специализированной GIS-системы с традиционным учетом в таблицах и общих картах.
+                    {t('subtitle')}
                 </p>
             </div>
 
@@ -52,9 +55,9 @@ export const Comparison = () => {
                 <table className={styles.table}>
                     <thead>
                         <tr>
-                            <th className={styles.thFeature}>Функционал</th>
-                            <th className={`${styles.th} ${styles.thPrimary}`}>Fiber Atlas</th>
-                            <th className={styles.th}>Excel / Общие карты</th>
+                            <th className={styles.thFeature}>{t('headers.feature')}</th>
+                            <th className={`${styles.th} ${styles.thPrimary}`}>{t('headers.atlas')}</th>
+                            <th className={styles.th}>{t('headers.manual')}</th>
                         </tr>
                     </thead>
                     <tbody>
