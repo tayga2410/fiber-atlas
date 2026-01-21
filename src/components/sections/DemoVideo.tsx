@@ -10,7 +10,7 @@ export const DemoVideo = () => {
     return (
         <Section id="demo" alt>
             <div className={styles.header}>
-                <h2 className={styles.title}>Посмотрите Fiber Atlas в действии</h2>
+                <h2 className={styles.title}>Посмотрите GIS Connect в действии</h2>
                 <p className={styles.subtitle}>
                     Узнайте, как легко управлять сетью с помощью нашей системы.
                 </p>
@@ -20,7 +20,7 @@ export const DemoVideo = () => {
                 <div className={styles.videoPlaceholder}>
                     <img
                         src="/images/demo-thumbnail.png"
-                        alt="Fiber Atlas Interface"
+                        alt="GIS Connect Interface"
                         className={styles.thumbnail}
                     />
                     <div className={styles.playOverlay}>

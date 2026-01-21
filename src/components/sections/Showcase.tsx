@@ -24,6 +24,16 @@ export const Showcase = () => {
             image: '/images/scheme.png',
             titleKey: 'schemeTitle',
             descriptionKey: 'schemeDesc'
+        },
+        {
+            image: '/images/cluster.jpeg',
+            titleKey: 'clusterTitle',
+            descriptionKey: 'clusterDesc'
+        },
+        {
+            image: '/images/many-objects.jpeg',
+            titleKey: 'manyObjectsTitle',
+            descriptionKey: 'manyObjectsDesc'
         }
     ];
 

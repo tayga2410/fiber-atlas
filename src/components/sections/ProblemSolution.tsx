@@ -62,7 +62,7 @@ export const ProblemSolution = () => {
                     <div className={styles.solutionImageWrapper}>
                         <img
                             src="/images/features-collage.png"
-                            alt="Fiber Atlas Features Collage"
+                            alt="GIS Connect Features Collage"
                             className={styles.solutionImage}
                         />
                     </div>

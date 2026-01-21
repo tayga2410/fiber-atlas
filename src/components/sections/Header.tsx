@@ -32,8 +32,7 @@ export const Header = () => {
         <header className={clsx(styles.header, isScrolled && styles.scrolled)}>
             <div className={styles.container}>
                 <div className={styles.logo}>
-                    <img src="/images/logo.png?v=2" alt="Fiber Atlas Logo" className={styles.logoImage} />
-                    <span className={styles.logoText}>Fiber Atlas</span>
+                    <img src="/gs-logo.png" alt="GIS Connect Logo" className={styles.logoImage} />
                 </div>
 
                 <nav className={styles.nav}>

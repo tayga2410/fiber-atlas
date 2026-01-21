@@ -18,8 +18,7 @@ export const Footer = () => {
                 <div className={styles.top}>
                     <div className={styles.brand}>
                         <div className={styles.logo}>
-                            <img src="/images/logo.png?v=2" alt="Fiber Atlas Logo" className={styles.logoImage} />
-                            <span className={styles.logoText}>Fiber Atlas</span>
+                            <img src="/gs-logo.png" alt="GIS Connect Logo" className={styles.logoImage} />
                         </div>
                         <p className={styles.description}>
                             {t('description')}
@@ -48,7 +47,7 @@ export const Footer = () => {
 
                 <div className={styles.bottom}>
                     <div className={styles.copyright}>
-                        © 2024-2026 Fiber Atlas. {t('copyright')}
+                        © 2024-2026 GIS Connect. {t('copyright')}
                     </div>
                     <div className={styles.legal}>
                         <a href={`/${locale}/privacy`}>{t('privacy')}</a>

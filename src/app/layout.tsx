@@ -5,17 +5,22 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Fiber Atlas — Система учета ВОЛС в Казахстане | GIS для провайдеров",
+  title: "GIS Connect — Система учета ВОЛС в Казахстане | GIS для провайдеров",
   description: "Профессиональная система учета ВОЛС (GIS) для интернет-провайдеров Казахстана. Паспортизация сети, интерактивные схемы, управление муфтами и кабелями. Внедрение за 3 дня.",
-  keywords: "учет ВОЛС, GIS для провайдера, паспортизация сети, схема разварки муфт, управление сетью ISP, Fiber Atlas, карта ВОЛС, Казахстан, учет оптоволокна",
+  keywords: "учет ВОЛС, GIS для провайдера, паспортизация сети, схема разварки муфт, управление сетью ISP, GIS Connect, карта ВОЛС, Казахстан, учет оптоволокна",
   openGraph: {
-    title: "Fiber Atlas — Система учета ВОЛС в Казахстане",
+    title: "GIS Connect — Система учета ВОЛС в Казахстане",
     description: "Профессиональная GIS-система для операторов связи. Паспортизация, мониторинг и управление сетью в одном окне.",
     type: "website",
     locale: "ru_RU",
   },
   icons: {
-    icon: '/favicon.png',
+    icon: [
+      { url: '/favicon-gs.png', sizes: '518x481', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/favicon-gs.png', sizes: '518x481', type: 'image/png' },
+    ],
   },
 };
 
