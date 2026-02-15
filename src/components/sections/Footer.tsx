@@ -38,8 +38,8 @@ export const Footer = () => {
                     <div className={styles.linksColumn}>
                         <h4 className={styles.columnTitle}>{t('contacts')}</h4>
                         <ul className={styles.links}>
-                            <li><a href="https://wa.me/77007774445" target="_blank" rel="noopener noreferrer">{t('Header.phone')}</a></li>
-                            <li><a href="https://wa.me/77007774445" target="_blank" rel="noopener noreferrer">{t('whatsapp')}</a></li>
+                            <li><a href="https://wa.me/77015338840" target="_blank" rel="noopener noreferrer">{t('Header.phone')}</a></li>
+                            <li><a href="https://wa.me/77015338840" target="_blank" rel="noopener noreferrer">{t('whatsapp')}</a></li>
                             <li><a href="https://t.me/tayga_dev" target="_blank" rel="noopener noreferrer">{t('telegram')}</a></li>
                         </ul>
                     </div>

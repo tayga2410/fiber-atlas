@@ -25,7 +25,7 @@ export const CTA = () => {
                     <div className={styles.actions}>
                         <Button
                             size="lg"
-                            href="https://wa.me/77007774445"
+                            href="https://wa.me/77015338840"
                             target="_blank"
                             rel="noopener noreferrer"
                             className={styles.whatsappBtn}

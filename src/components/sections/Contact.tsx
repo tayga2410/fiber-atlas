@@ -21,7 +21,7 @@ export const Contact = () => {
 
         const text = `${t('form.newRequest')}:\n${t('form.name')}: ${name}\n${t('form.company')}: ${company}\n${t('form.phone')}: ${phone}\n${t('form.comment')}: ${message}`;
         const encodedText = encodeURIComponent(text);
-        window.open(`https://wa.me/77007774445?text=${encodedText}`, '_blank');
+        window.open(`https://wa.me/77015338840?text=${encodedText}`, '_blank');
     };
 
     return (
@@ -50,7 +50,7 @@ export const Contact = () => {
                             <Phone className={styles.icon} size={24} />
                             <div>
                                 <div className={styles.contactLabel}>{t('info.phone')}</div>
-                                <a href="https://wa.me/77007774445" target="_blank" rel="noopener noreferrer" className={styles.contactValue}>{t('Header.phone')}</a>
+                                <a href="https://wa.me/77015338840" target="_blank" rel="noopener noreferrer" className={styles.contactValue}>{t('Header.phone')}</a>
                             </div>
                         </motion.div>
 
@@ -64,7 +64,7 @@ export const Contact = () => {
                             <MessageCircle className={styles.icon} size={24} />
                             <div>
                                 <div className={styles.contactLabel}>{t('info.whatsapp')}</div>
-                                <a href="https://wa.me/77007774445" target="_blank" rel="noopener noreferrer" className={styles.contactValue}>{t('info.writeWhatsapp')}</a>
+                                <a href="https://wa.me/77015338840" target="_blank" rel="noopener noreferrer" className={styles.contactValue}>{t('info.writeWhatsapp')}</a>
                             </div>
                         </motion.div>
 
